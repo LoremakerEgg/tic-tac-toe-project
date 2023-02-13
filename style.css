@@ -18,4 +18,31 @@ body {
 }
 .square {
   background-color: black;
+  display: flex;
+  padding: 2rem;
+}
+#game-over {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.528);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-over-container {
+  background-color: black;
+  border: 1px solid white;
+  padding: 2rem;
+  width: 300px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  visibility: hidden;
 }
