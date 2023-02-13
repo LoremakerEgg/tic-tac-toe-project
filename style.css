@@ -1,21 +1,21 @@
 body {
-    height: 100vh;
-    margin: 0;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #game-area {
-    background-color: white;
-    height: 600px;
-    width: 600px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 0.5rem;
+  background-color: white;
+  height: 600px;
+  width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0.5rem;
 }
-.square{
-    background-color: black;
+.square {
+  background-color: black;
 }
