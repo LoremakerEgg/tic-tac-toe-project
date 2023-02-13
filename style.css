@@ -53,6 +53,9 @@ body {
 .hidden {
   visibility: hidden;
 }
+.square:hover {
+  cursor: pointer;
+}
 
 button {
   padding: 1rem 2rem;
