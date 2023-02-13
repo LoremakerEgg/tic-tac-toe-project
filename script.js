@@ -1,8 +1,10 @@
 const btn = document.querySelector("button");
 const h2 = document.querySelector("h2");
 const gameOverScreen = document.getElementById("game-over");
+const gameOverScreenContainer = document.getElementById("game-over-container");
+let randomMeme = Math.floor(Math.random() * 100);
 
-const game = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+let game = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 const square1 = document.getElementById("1");
 const square2 = document.getElementById("2");
@@ -56,10 +58,25 @@ const playerWins = (player) => {
     h2.textContent = `It's a draw!`;
   } else {
     h2.textContent = `Player ${player} wins!`;
+    fetch("https://api.imgflip.com/get_memes")
+      .then((res) => res.json())
+      .then((data) => {
+        let link = data.data.memes[randomMeme].url;
+        const image = document.createElement("img");
+        image.setAttribute("src", link);
+        gameOverScreenContainer.appendChild(image);
+      });
   }
 };
 
-btn.addEventListener("click", (e) => {});
+btn.addEventListener("click", (e) => {
+  gameOverScreen.classList.add("hidden");
+  const img = document.querySelectorAll("img");
+  currentPlayer = 1;
+  game = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  img.forEach((el) => el.remove("img"));
+  randomMeme = Math.floor(Math.random() * 100);
+});
 
 function checkIfWin(player) {
   if (
